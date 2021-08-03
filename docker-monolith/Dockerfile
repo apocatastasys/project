@@ -1,8 +1,5 @@
 FROM ubuntu:18.04
 
-RUN curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
-RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-
 RUN apt-get update
 RUN apt-get install -y mongodb-server ruby-full ruby-dev build-essential git
 RUN gem install bundler
