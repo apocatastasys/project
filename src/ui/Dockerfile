@@ -1,4 +1,4 @@
-FROM ruby:2.2
+FROM ubuntu:16.04
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y ruby-full=1:2.3.0+1 ruby-dev=1:2.3.0+1 build-essential=12.1ubuntu2 \
