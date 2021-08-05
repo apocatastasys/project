@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ruby:2.6-alpine
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y ruby-full=1:2.3.0+1 ruby-dev=1:2.3.0+1 build-essential=12.1ubuntu2 \
@@ -13,7 +13,7 @@ COPY Gemfile* $APP_HOME/
 RUN bundle install
 COPY . $APP_HOME
 
-ENV POST_SERVICE_HOST posts
+ENV POST_SERVICE_HOST post
 ENV POST_SERVICE_PORT 5000
 ENV COMMENT_SERVICE_HOST comment
 ENV COMMENT_SERVICE_PORT 9292
