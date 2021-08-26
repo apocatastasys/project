@@ -1,6 +1,6 @@
 # apocatastasys_microservices
-apocatastasys microservices repository
 
-Сделано основное ДЗ по теме gitlab-ci 
-Была развернута ВМ с установленным на ней gitlab
+
+Выполнено основное дз по теме monitoring-1
+ссылка на контейнеры - https://hub.docker.com/u/apocatastasys
 
