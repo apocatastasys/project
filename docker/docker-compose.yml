@@ -32,7 +32,7 @@ services:
     networks:
       - front_net
     volumes:
-      - .:/data/ui
+      - ui:/data/ui
       
     logging:
       driver: "fluentd"
@@ -44,3 +44,4 @@ services:
       - front_net
     volumes:
       post_db:
+      ui:
