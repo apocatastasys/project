@@ -1,5 +1,14 @@
 version: '3'
 services:
+
+  post_db:
+    image: mongo:${MONGO_VERSION}
+    volumes:
+      - post_db:/data/db
+    networks:
+      - front_net
+      - back_net
+
   post:
     image: ${USER_NAME}/post
     environment:
