@@ -27,9 +27,13 @@ services:
   ui:
     build: src/ui
     image: ${USER_NAME}/ui:${UI_VERSION}
-    ports: ${UI_PORT}:9292/tcp
+    ports: 
+      - ${UI_PORT}:9292/tcp
     networks:
-      - front_net 
+      - front_net
+    volumes:
+      - ui:/data/ui
+      
     logging:
       driver: "fluentd"
       options:
