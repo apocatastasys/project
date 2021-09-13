@@ -41,7 +41,8 @@ services:
         tag: service.ui
         
 networks:
-  - front_net
+  front_net
+  back_net
 volumes:
   post_db:
   ui:
