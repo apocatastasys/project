@@ -34,5 +34,8 @@ services:
       options:
         fluentd-address: localhost:24224
         tag: service.ui
+        
     networks:
       - front_net
+    volumes:
+      post_db:
