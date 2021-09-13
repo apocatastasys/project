@@ -25,8 +25,14 @@ services:
         tag: service.post
 
   ui:
+    build: ./ui
+    image: ${USER_NAME}/ui:${UI_VERSION}
+    ports:
+      - ${UI_PORT}:9292/tcp
     logging:
       driver: "fluentd"
       options:
         fluentd-address: localhost:24224
         tag: service.ui
+    networks:
+      - front_net
