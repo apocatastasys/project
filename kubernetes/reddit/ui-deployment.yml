@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - image: apocatastasys/ui
-        name: post
+        name: ui
