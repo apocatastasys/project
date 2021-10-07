@@ -1,0 +1,15 @@
+web:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.project.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://178.154.201.156'
+  ports:
+    - '80:80'
+    - '443:443'
+    - '2222:22'
+  volumes:
+    - '/root/Otus/apocatastasys_project/omnibus/srv/config:/etc/gitlab'
+    - '/root/Otus/apocatastasys_project/omnibus/srv/logs:/var/log/gitlab'
+    - '/root/Otus/apocatastasys_project/omnibus/srv/data:/var/opt/gitlab'
