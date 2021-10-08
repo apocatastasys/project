@@ -10,7 +10,7 @@ build_job:
   stage: build
   script:
     - apt-get update
-    - apt install python3-pip
+    - apt install -y python3-pip
     - cd search_engine_ui
     - pwd
     - pip install -r requirements.txt
