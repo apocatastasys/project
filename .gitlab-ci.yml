@@ -8,6 +8,7 @@ stages:
 build_job:
   stage: build
   script:
+    - env
     - cd search_engine_ui/ui && FLASK_APP=ui.py gunicorn ui:app -b 178.154.201.156
     - pwd
     - whoami
