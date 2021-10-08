@@ -1,0 +1,18 @@
+stages:
+  - build
+build_job:
+  stage: build
+  script:
+    - cd search_engine_ui
+    - pip3 install -r requirements.txt
+    - cd ui
+    - FLASK_APP=ui.py gunicorn ui:app -b   178.154.201.156
+tags:
+  shell-runner
+
+ # variables:
+#    MONGO: 178.154.201.156
+  #  MONGO_PORT: 27017
+   # DOCKER_USERNAME: appuser
+    #DOCKER_HOST: tcp://178.154.201.156:2376
+    #DOCKER_MACHINE_NAME: project-host    
