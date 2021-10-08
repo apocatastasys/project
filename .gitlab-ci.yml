@@ -1,5 +1,6 @@
 stages:
   - build
+
 build_job:
   stage: build
   script:
@@ -7,8 +8,8 @@ build_job:
     - pip3 install -r requirements.txt
     - cd ui
     - FLASK_APP=ui.py gunicorn ui:app -b   178.154.201.156
-tags:
-  shell-runner
+  tags:
+    - shell-runner
 
  # variables:
 #    MONGO: 178.154.201.156
