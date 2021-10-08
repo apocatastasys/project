@@ -7,7 +7,7 @@ stages:
 deploy_job:
   stage: deploy
   script:
-    - docker run  -d --name mymongo -p 27017:27017 $DOCKER_USERNAME/mongo-enterprise:4.0
+    #- docker run  -d --name mymongo -p 27017:27017 appuser/mongo-enterprise:4.0
   
     - echo 'Deploy'
     - cd search_engine_ui/ui && FLASK_APP=ui.py gunicorn ui:app -b 178.154.201.156
