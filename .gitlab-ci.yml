@@ -24,4 +24,14 @@ test_integration_job:
 deploy_job:
   stage: deploy
   script:
+    - docker run  -d --name mymongo -p 27017:27017 $DOCKER_USERNAME/mongo-enterprise:4.0
+  
     - echo 'Deploy'
+    - cd search_engine_ui/ui && FLASK_APP=ui.py gunicorn ui:app -b 178.154.201.156
+  
+  environment:
+    MONGO: 178.154.201.156
+    MONGO_PORT: 27017
+   # EXCLUDE_URLS: '.*github.com' python -u crawler/crawler.py https://vitkhab.github.io/search_engine_test_site/
+    #RMQ_USERNAME: rabbit
+
