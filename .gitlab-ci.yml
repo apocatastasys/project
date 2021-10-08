@@ -8,8 +8,7 @@ stages:
 build_job:
   stage: build
   script:
-    - apt install python3-pip
-    - search_engine_ui
+    - cd search_engine_ui
     - pwd
     - pip install -r requirements.txt
     - pwd
