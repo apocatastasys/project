@@ -13,3 +13,5 @@ web:
     - '/root/Otus/apocatastasys_project/omnibus/srv/config:/etc/gitlab'
     - '/root/Otus/apocatastasys_project/omnibus/srv/logs:/var/log/gitlab'
     - '/root/Otus/apocatastasys_project/omnibus/srv/data:/var/opt/gitlab'
+    - '/srv/gitlab-runner/config:/etc/gitlab-runner'
+    - '/var/run/docker.sock:/var/run/docker.sock'
