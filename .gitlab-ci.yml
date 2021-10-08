@@ -1,5 +1,6 @@
 #services:
  # - docker:dind
+image: ubuntu:18.04
 
 stages:
   - build
@@ -8,6 +9,7 @@ stages:
 build_job:
   stage: build
   script:
+    - apt install python3-pip
     - cd search_engine_ui
     - pwd
     - pip install -r requirements.txt
