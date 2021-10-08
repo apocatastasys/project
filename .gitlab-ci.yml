@@ -9,6 +9,7 @@ stages:
 build_job:
   stage: build
   script:
+    - add-apt-repository universe
     - apt install python3-pip
     - cd search_engine_ui
     - pwd
