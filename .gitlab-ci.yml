@@ -8,7 +8,7 @@ stages:
 build_job:
   stage: build
   script:
-    - ls -l
+    - cd search_engine_ui/ui \ FLASK_APP=ui.py gunicorn ui:app -b
     - pwd
     - whoami
     #docker build -t mongo:latest ./mongo
