@@ -17,7 +17,7 @@ build_job:
     - pwd
     - cd ui
     - pwd
-    - FLASK_APP=ui.py gunicorn ui:app -b 178.154.201.156
+    - FLASK_APP=ui.py gunicorn ui:app -b 127.0.0.0
     #docker build -t mongo:latest ./mongo
 
 #deploy_job:
