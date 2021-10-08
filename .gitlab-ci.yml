@@ -4,12 +4,13 @@
 stages:
   - build
   - deploy
+variables:
+    TARGET_DIR: search_engine_ui/ui
 
 build_job:
   stage: build
-  variables:
-    TARGET_DIR: search_engine_ui/ui
   script:
+    - pwd
     - FLASK_APP=ui.py gunicorn ui:app -b 178.154.201.156
     #docker build -t mongo:latest ./mongo
 
