@@ -4,6 +4,7 @@ stages:
 build_job:
   stage: build
   script:
+    - git clone http://178.154.201.156/projectgroup/project.git
     - hostname
     - cd search_engine_ui
     - pip install -r requirements.txt
