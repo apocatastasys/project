@@ -10,9 +10,9 @@ build_job:
   script:
     docker build -t mongo:latest ./mongo
 
-deploy_job:
-  stage: deploy
-  script:
+#deploy_job:
+  #stage: deploy
+  #script:
     #- docker run  -d --name mymongo -p 27017:27017 appuser/mongo-enterprise:4.0
   
     #- echo 'Deploy'
