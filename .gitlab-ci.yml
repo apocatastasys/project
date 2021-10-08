@@ -13,7 +13,7 @@ build_job:
     - apt install -y python3-pip
     - cd search_engine_ui
     - pwd
-    - pip install -r requirements.txt
+    - pip3 install -r requirements.txt
     - pwd
     - cd ui
     - pwd
