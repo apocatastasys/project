@@ -1,13 +1,17 @@
 stages:
   - build
 
+before_script:
+  - docker info
+
 build_job:
   stage: build
   script:
     - cd search_engine_ui
+    - 
     - docker build -t app:1.0 .
   tags:
-    - docker
+    - shell-runner
 
  # variables:
 
