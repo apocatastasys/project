@@ -2,7 +2,7 @@ stages:
   - build
 
 before_script:
-  - docker info
+  - sudo docker info
 
 build_job:
   stage: build
