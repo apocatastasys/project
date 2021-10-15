@@ -2,6 +2,7 @@ image: gitlab/dind
 
 stages:
   - build
+  - deploy
 
 before_script:
   - docker info
@@ -14,5 +15,9 @@ build_job:
   tags:
     - docker
 
- # variables:
 
+ # variables:
+deploy_job:
+  stage: deploy
+  script:
+    - pwd && whoami
