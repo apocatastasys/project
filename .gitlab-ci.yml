@@ -21,6 +21,3 @@ deploy_job:
   stage: deploy
   script:
     - docker run --name App:1.2 -p 8000:8000 app:1.0
-
-volumes:
-  - /home/ubuntu/:/ ro|rw persist
