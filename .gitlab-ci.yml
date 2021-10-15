@@ -14,7 +14,7 @@ build_job:
     - docker build -t app:1.0 .
     - docker run --name App1.2 -p 8000:8000 app:1.0
   tags:
-    - docker
+    - dockermachine 
 
 #deploy_job:
  # stage: deploy
