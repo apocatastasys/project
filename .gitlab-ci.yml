@@ -4,8 +4,7 @@ stages:
   - build
 
 before_script:
-  - whoami
-  - info
+  - docker info
 
 build_job:
   stage: build
