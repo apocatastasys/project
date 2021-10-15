@@ -5,7 +5,7 @@ stages:
  # - deploy
 
 before_script:
-  - docker info
+  - docker-machine ls
 
 build_job:
   stage: build
