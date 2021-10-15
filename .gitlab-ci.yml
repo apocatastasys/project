@@ -1,4 +1,4 @@
-image: gitlab/dind
+#image: gitlab/dind
 
 stages:
   - build
@@ -20,4 +20,4 @@ build_job:
 deploy_job:
   stage: deploy
   script:
-    - pwd && whoami
+    - docker run --name App:1.2 -p 8000:8000 app:1.0
