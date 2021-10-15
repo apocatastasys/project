@@ -5,7 +5,7 @@ stages:
  # - deploy
 
 before_script:
-  - docker-machine ls
+  - eval $(docker-machine tcp://178.154.201.156:2376)
 
 build_job:
   stage: build
