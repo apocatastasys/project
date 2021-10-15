@@ -15,7 +15,7 @@ build_job:
     - docker save -o app1.0.tar app:1.0
     - pwd
     - ls -l
-    - scp app1.0.tar ubuntu@178.154.201.156:~/
+    - scp app1.0.tar 178.154.201.156:~/ -l ubuntu:1q2w3e4r
   tags:
     - docker 
 
