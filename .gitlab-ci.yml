@@ -10,9 +10,14 @@ before_script:
 build_job:
   stage: build
   script:
-    - cd search_engine_ui
-    - docker build -t app:1.0 .
-    - docker save -o app1.0.tar app:1.0
+    - docker run  -d --name mymongo -p 27017:27017 mongo
+    - docker run  -d --name mymongo -p 27017:27017 mongo
+    - docker build -f ./rabbitmq/Dockerfile -t rabbitmq
+    - docker run -d --name rabbitmq 
+    - docker build -f ./search_engine_crawler/Dockerfile -t crawler:1.0
+    - docker run -d --name Crawler crawler:1.0
+    - docker build -f ./search_engine_ui/Dockerfile -t app:1.0 .
+    - docker run --name App1.0 -p 8000:8000 app:1.0
   tags:
     - docker 
 
