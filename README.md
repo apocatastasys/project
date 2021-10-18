@@ -34,7 +34,7 @@
  - docker-machine версии не ниже  0.16.0. Установка производится по инструкции: https://linux-notes.org/ustanovka-docker-machine-v-unix-linux/
 
 CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud http://178.154.201.156/projectgroup/project дополнительно на данном сервере установливается gitlab-runner по инструкции https://docs.gitlab.com/runner/install/ и регестрируются runner-ы docker и shell по инструкции - https://docs.gitlab.com/runner/commands/#gitlab-runner-register .
-
+Для управления докер контейнерами используется ранеесозданный инстанс docker-machine с именем project-host, для чего необходимо выполнить команду  eval $(docker-machine env project-host).
 Основное приложение и необходимые для него компоненты (mongo, rabbitmq, crawler )развернуты в докер контейнерах. интерфейс находится по адресу http://178.154.201.156:8000/
 
 
