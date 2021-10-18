@@ -27,6 +27,10 @@
 
 
 Репозиторий проекта расположен на сайте github.com по адресу: https://github.com/apocatastasys/project .
+Для работы с проектом на компьютере разработчика должно быть установлено следующее ПО:
+ - YC CLI - интерфейс командной строки YandexCloud. Устанавливается согласно инструкции: https://cloud.yandex.ru/docs/cli/operations/install-cli.
+ - docker версии не ниже 20.10.7. Установка производится согласно следующей инструкции: https://docs.docker.com/engine/install/
+ - docker-machine версии не ниже  0.16.0. Установка производится по инструкции: https://linux-notes.org/ustanovka-docker-machine-v-unix-linux/
 
 CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud http://178.154.201.156/projectgroup/project дополнительно были установлены runner-ы docker и shell.
 
