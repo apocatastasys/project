@@ -25,7 +25,6 @@
 - CHANGELOG с описанием выполненной работы
 
 
-Проект собран на базе виртуальной машины YandexCloud. 
 
 Репозиторий проекта расположен на сайте github.com по адресу: https://github.com/apocatastasys/project .
 
