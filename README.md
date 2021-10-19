@@ -24,7 +24,8 @@
 - ScreenCast
 - CHANGELOG с описанием выполненной работы
 
-
+Демонстрационная версия приложение и необходимые для него компоненты (mongo, rabbitmq, crawler )развернуты в докер контейнерах. интерфейс находится по адресу http://178.154.201.156:8000/ .
+CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud http://178.154.201.156/projectgroup/project .
 
 Репозиторий проекта расположен на сайте github.com по адресу: https://github.com/apocatastasys/project .
 Для работы с проектом на компьютере разработчика должно быть установлено следующее ПО:
@@ -32,9 +33,7 @@
  - git версии не ниже 1.8.3.1. Установка производится по инструкции: https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Git
  - docker версии не ниже 20.10.7. Установка производится согласно следующей инструкции: https://docs.docker.com/engine/install/
  - docker-machine версии не ниже  0.16.0. Установка производится по инструкции: https://linux-notes.org/ustanovka-docker-machine-v-unix-linux/
+ - CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud (необходимо выполнить docker-compose up -d из папки omnibus) дополнительно на данном сервере установливается gitlab-runner по инструкции https://docs.gitlab.com/runner/install/ и регестрируются runner-ы docker и shell согласно инструкции - https://docs.gitlab.com/runner/commands/#gitlab-runner-register .
+ - Для управления докер контейнерами используется ранеесозданный инстанс docker-machine с именем project-host, для чего необходимо выполнить команду  eval $(docker-machine env project-host).
 
-CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud http://178.154.201.156/projectgroup/project дополнительно на данном сервере установливается gitlab-runner по инструкции https://docs.gitlab.com/runner/install/ и регестрируются runner-ы docker и shell по инструкции - https://docs.gitlab.com/runner/commands/#gitlab-runner-register .
-Для управления докер контейнерами используется ранеесозданный инстанс docker-machine с именем project-host, для чего необходимо выполнить команду  eval $(docker-machine env project-host).
-Основное приложение и необходимые для него компоненты (mongo, rabbitmq, crawler )развернуты в докер контейнерах. интерфейс находится по адресу http://178.154.201.156:8000/
-
-
+Для развертывания проекта необходимо, на подготовленной согласно инструкции, машине выполнить команду git clone https://github.com/apocatastasys/project.git
