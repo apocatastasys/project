@@ -1,11 +1,11 @@
-image: gitlab/dind
+#image: gitlab/dind
 
 stages:
   - build
  # - deploy
 
 before_script:
-  #- docker info
+  - docker info
 
 build_job:
   stage: build
@@ -18,5 +18,5 @@ build_job:
     - docker build ./search_engine_ui/ -t app:1.0
     - docker run --name App1.0 -p 8000:8000 app:1.0
   tags:
-    - docker 
+    - shell-runner 
 
