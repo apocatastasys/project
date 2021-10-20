@@ -6,7 +6,7 @@ stages:
 
 before_script:
   - whoami
-  - docker login -u apocatastasys -p YXBvY2F0YXN0YXN5czo2YzRlZTNkNC1mZjdmLTQ1YmItOTMwYy1hNmFmNzEzMzEzNGQ https://index.docker.io
+  - docker login -u apocatastasys -p YXBvY2F0YXN0YXN5czo2YzRlZTNkNC1mZjdmLTQ1YmItOTMwYy1hNmFmNzEzMzEzNGQ
 build_job:
   stage: build
   script:
