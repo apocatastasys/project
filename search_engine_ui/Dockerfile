@@ -12,5 +12,5 @@ ENV MONGO_PORT=27017
 EXPOSE 8000
 COPY . /home/app
 
-RUN cd ../ && pip install -r requirements.txt -r requirements-test.txt
-CMD FLASK_APP=ui.py gunicorn ui:app -b 0.0.0.0
+#RUN cd ../ && pip install -r requirements.txt -r requirements-test.txt
+#CMD FLASK_APP=ui.py gunicorn ui:app -b 0.0.0.0
