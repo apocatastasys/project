@@ -5,6 +5,8 @@ stages:
  # - deploy
 
 before_script:
+  - whoami
+  - hostname
   - docker info
 
 build_job:
