@@ -11,15 +11,10 @@ before_script:
 build_job:
   stage: build
   script:
-    #- docker run  -d --name mymongo -p 27017:27017 mongo
-    #- docker push 
+    - docker run  -d --name mymongo -p 27017:27017 mongo --tag apocatastasys/mongo  
     - docker build ./rabbitmq/ --tag apocatastasys/rabbitmq
-    #- docker login -u apocatastasys -p 3c150b4e-abf8-430e-904e-176cda69a3f3
-    #- docker run -d --name rabbitmq1.0 rabbitmq 
-    #- docker build ./search_engine_crawler/ -t crawler:1.0
-    #- docker run -d --name Crawler crawler:1.0
-    #- docker build ./search_engine_ui/ -t app:1.0
-    #- docker run --name App1.0 -p 8000:8000 app:1.0
+    - docker build ./search_engine_crawler/ --tag apocatastasys/crawler:1.0
+    - docker build ./search_engine_ui/ --tag apocatastasys/app:1.0
   tags:
     - docker 
 
@@ -27,6 +22,9 @@ push-image:
   stage: push
   script:
     - docker push apocatastasys/rabbitmq
+    - docker push apocatastasys/crawler:1.0
+    - docker push apocatastasys/app:1.0
+
   tags: 
     - docker
 
