@@ -20,5 +20,5 @@ build_job:
     #- docker build ./search_engine_ui/ -t app:1.0
     #- docker run --name App1.0 -p 8000:8000 app:1.0
   tags:
-    - shell-runner 
+    - docker 
 
