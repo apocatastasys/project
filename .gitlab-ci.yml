@@ -26,7 +26,7 @@ build_job:
 
 push-image:
   stage: push
-  - docker push apocatastasys/rabbitmq
+    - docker push apocatastasys/rabbitmq
   tags: 
     - docker
 
