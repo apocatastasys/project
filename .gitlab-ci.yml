@@ -6,7 +6,7 @@ stages:
 
 before_script:
   - whoami
-  - docker login -u apocatastays -p 6c4ee3d4-ff7f-45bb-930c-a6af7133134d https://index.docker.io
+  - docker login -u apocatastays -p YXBvY2F0YXN0YXN5czo2YzRlZTNkNC1mZjdmLTQ1YmItOTMwYy1hNmFmNzEzMzEzNGQ= https://index.docker.io
 build_job:
   stage: build
   script:
