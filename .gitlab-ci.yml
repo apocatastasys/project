@@ -5,6 +5,7 @@ stages:
  # - deploy
 
 before_script:
+  - ssh ubuntu@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
   stage: build
