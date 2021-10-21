@@ -8,13 +8,14 @@ before_script:
   - apt-get update -y && apt-get install openssh-client -y
   - ssh -V
   - eval $(ssh-agent -s)
+  - echo "$ssh_private_key" | tr -d '\r' | ssh-add -
   - mkdir -p /home/appuser/.ssh
-  - touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/known_hosts
+  #- touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/known_hosts
   - chmod -R 700 /home/appuser/.ssh
   - echo "$SSH_KNOWN_HOSTS" > /home/appuser/.ssh/known_hosts
   - chmod 644 /home/appuser/.ssh/known_hosts
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
-  - echo "$ssh_pub_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa.pub
+  #- echo "$ssh_private_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
+  #- echo "$ssh_pub_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa.pub
   - ssh -vvv -i /home/appuser/.ssh/id_rsa.pub -o StrictHostKeyChecking=no appuser@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
