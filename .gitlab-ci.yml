@@ -6,9 +6,9 @@ stages:
 
 before_script:
   - eval $(ssh-agent -s)
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add /root/.ssh/id_rsa
+  - echo "$ssh_private_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa
   - mkdir -p ~/.ssh
-  #- touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/known_hosts
+  - touch ~/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/known_hosts
   - chmod -R 700 ~/.ssh
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
