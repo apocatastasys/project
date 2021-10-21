@@ -6,11 +6,12 @@ stages:
 
 before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+  - su - deployer
   - eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
-  - touch /root/.ssh/id_rsa
+  - touch ~/.ssh/id_rsa
   - chmod -R 700 ~/.ssh
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add /root/.ssh/id_rsa
+  - echo "$ssh_private_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa
   - ls -l ~/.ssh
   - ssh -vvv -tt -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
