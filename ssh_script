@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+spawn echo "$ssh_private_key" | tr -d '\r' | ssh-add
+expect "Enter passphrase for (stdin):"
+send "etcmotd1!\n";
+expect "Identity added:*"
+interact
