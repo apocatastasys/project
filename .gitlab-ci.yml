@@ -16,7 +16,7 @@ before_script:
   - chmod 644 /home/appuser/.ssh/known_hosts
   #- echo "$ssh_private_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
   #- echo "$ssh_pub_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa.pub
-  - ssh -vvv -i /home/appuser/.ssh/id_rsa.pub -o StrictHostKeyChecking=no appuser@178.154.201.156
+  - ssh -vvv -o StrictHostKeyChecking=no appuser@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
   stage: build
