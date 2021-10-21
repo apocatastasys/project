@@ -7,6 +7,7 @@ stages:
 before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   - eval $(ssh-agent -s)
+  - ssh-keyscan 178.154.201.156
   - mkdir -p /home/appuser/.ssh
   - touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub
   - chmod -R 700 /home/appuser/.ssh
