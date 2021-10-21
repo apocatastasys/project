@@ -9,8 +9,8 @@ before_script:
   - su - deployer
   - eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
-  - touch ~/.ssh/id_rsa
   - chmod -R 700 ~/.ssh
+  - whoami
   - echo "$ssh_private_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa
   - ls -l ~/.ssh
   - ssh -vvv -tt -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
