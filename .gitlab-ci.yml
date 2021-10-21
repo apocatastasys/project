@@ -8,11 +8,12 @@ before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   #- eval $(ssh-agent -s)
   - mkdir -p /home/appuser/.ssh
-  - touch /home/appuser/.ssh/id_rsa.pub
+  - touch /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/id_rsa
   - chmod -R 700 /home/appuser/.ssh
   - whoami
   - ls -l /home/appuser/.ssh
-  - echo "$ssh_private_key" > /home/appuser/.ssh/id_rsa.pub
+  - echo "$ssh_private_key" > /home/appuser/.ssh/id_rsa
+  - echo "$ssh_pub_key" > /home/appuser/.ssh/id_rsa.pub
   - ssh-copy-id -i /home/appuser/.ssh/id_rsa.pub deployer@178.154.201.156
   - ssh -vvv -T -i /home/appuser/.ssh/id_rsa.pub -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
