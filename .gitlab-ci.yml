@@ -9,12 +9,11 @@ before_script:
   - mkdir -p ~/.ssh
   - touch ~/.ssh/id_rsa #/home/appuser/.ssh/id_rsa.pub
   - chmod -R 700 ~/.ssh
-  - echo "$ssh_pub_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa.pub
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add -
+  - ssh-add <(echo "$ssh_private_key")
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
   #- echo "$ssh_private_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
-  - echo "$ssh_pub_key" | tr -d '\r' | ssh-add - ~/.ssh/id_rsa.pub
+  #- echo "$ssh_pub_key" | tr -d '\r' | ssh-add - ~/.ssh/id_rsa.pub
   - ssh -vvv -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
