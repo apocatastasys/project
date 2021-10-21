@@ -10,6 +10,7 @@ before_script:
   - mkdir -p ~/.ssh
   - chmod -R 700 ~/.ssh
   - whoami
+  - ls -l /home
   - sudo echo "$ssh_private_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa
   - ls -l ~/.ssh
   - ssh -vvv -T -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
