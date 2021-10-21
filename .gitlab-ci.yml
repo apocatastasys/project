@@ -12,7 +12,7 @@ before_script:
   - chmod -R 700 /home/appuser/.ssh
   - whoami
   - ls -l /home/appuser/.ssh
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
+  - echo "$ssh_pub_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa
   - ssh -vvv -o StrictHostKeyChecking=no appuser@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
