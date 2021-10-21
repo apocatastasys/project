@@ -5,8 +5,7 @@ stages:
  # - deploy
 
 before_script:
-  - whoami
-  - docker login -u apocatastasys -p $DockerhubToken
+  - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
   stage: build
   script:
