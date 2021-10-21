@@ -8,6 +8,7 @@ before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   - eval $(ssh-agent -s)
   - mkdir -p /home/ubuntu/.ssh
+  - touch ubuntu/.ssh/id_rsa
   - chmod -R 700 /home/ubuntu/.ssh
   - whoami
   - ls -l /home/ubuntu/.ssh
