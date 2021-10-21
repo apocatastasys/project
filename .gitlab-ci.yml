@@ -10,9 +10,9 @@ before_script:
   - mkdir -p ~/.ssh
   - chmod -R 700 ~/.ssh
   - whoami
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add ~/.ssh/id_rsa
+  - sudo echo "$ssh_private_key" | tr -d '\r' | ssh-add /.ssh/id_rsa
   - ls -l ~/.ssh
-  - ssh -vvv -tt -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
+  - ssh -vvv -T -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
   stage: build
