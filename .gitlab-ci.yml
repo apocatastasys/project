@@ -10,6 +10,7 @@ before_script:
   - echo "$ssh_private_key" | tr -d '\r' | ssh-add -
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
+  - ls -l ~/.ssh
   - ssh -vvv -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
