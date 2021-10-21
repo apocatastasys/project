@@ -7,13 +7,11 @@ stages:
 before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   - eval $(ssh-agent -s)
-  - echo "$SSH_KNOWN_HOSTS" >> /home/appuser/.ssh/known_hosts
-  - chmod 644 /home/appuser/.ssh/known_hosts
   - mkdir -p /home/appuser/.ssh
-  - touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub
+  - touch /home/appuser/.ssh/id_rsa /home/appuser/.ssh/id_rsa.pub /home/appuser/.ssh/known_hosts
   - chmod -R 700 /home/appuser/.ssh
-  - whoami
-  - ls -l /home/appuser/.ssh
+  - echo "$SSH_KNOWN_HOSTS" > /home/appuser/.ssh/known_hosts
+  - chmod 644 /home/appuser/.ssh/known_hosts
   - echo "$ssh_private_key" | tr -d '\r' | ssh-add -v /home/appuser/.ssh/id_rsa
   - echo "$ssh_pub_key" | tr -d '\r' | ssh-add /home/appuser/.ssh/id_rsa.pub
   - ssh -vvv -i /home/appuser/.ssh/id_rsa.pub -o StrictHostKeyChecking=no appuser@178.154.201.156
