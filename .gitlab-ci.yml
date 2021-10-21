@@ -6,7 +6,7 @@ stages:
 
 before_script:
   - whoami
-  - docker login -u apocatastasys -p 3c150b4e-abf8-430e-904e-176cda69a3f3
+  - docker login -u apocatastasys -p $DockerhubToken
 build_job:
   stage: build
   script:
