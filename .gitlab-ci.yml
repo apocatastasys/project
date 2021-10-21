@@ -9,7 +9,7 @@ before_script:
   - eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
-  - echo "$ssh_private_key" | tr -d '\r' | ssh-add -
+  - echo "$ssh_private_key" | tr -d '\r' | ssh-add /root/.ssh/id_rsa
   - ls -l ~/.ssh
   - ssh -vvv -tt -l deployer -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
