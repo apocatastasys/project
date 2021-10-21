@@ -7,8 +7,8 @@ stages:
 before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   - eval $(ssh-agent -s)
-  - mkdir -p ubuntu/.ssh
-  - chmod -R 700 ubuntu/.ssh
+  - mkdir -p /home/ubuntu/.ssh
+  - chmod -R 700 /home/ubuntu/.ssh
   - whoami
   - ls -l /home/ubuntu/.ssh
   - sudo echo "$ssh_private_key" | tr -d '\r' | ssh-add ubuntu/.ssh/id_rsa
