@@ -16,7 +16,7 @@ deploy_job:
     - cat ~/.ssh/id_rsa.pub
     - ssh-add ~/.ssh/id_rsa
     - scp docker-compose.yaml deployer@178.154.201.156:~
-    - ssh deployer@178.154.201.156 && docker-compose up
+    - ssh deployer@178.154.201.156 && sudo docker-compose up
   tags:
     - shell-runner
 
