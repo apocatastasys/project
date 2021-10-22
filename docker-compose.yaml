@@ -1,5 +1,15 @@
 version: '3'
 services:
+  prometheus:
+    image: apocatastasys/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - prometheus_data:/prometheus
+    command: 
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=1d
   mymongo:
     image: apocatastasys/mongo
     ports:
@@ -14,3 +24,5 @@ services:
     image: apocatastasys/app:1.0
     ports:
       - 8000:8000
+volumes:
+  prometheus_data:
