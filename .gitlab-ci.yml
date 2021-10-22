@@ -19,7 +19,7 @@ before_script:
   #- chmod 644 ~/.ssh/known_hosts
   #- ssh-add <(echo "$ssh_private_key" | base64 -d)
   #- echo "$ssh_pub_key" | tr -d '\r' | ssh-add - ~/.ssh/id_rsa.pub
-  - ssh -vvv ubuntu@178.154.201.156
+  - ssh -vvv deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
 build_job:
   stage: build
