@@ -6,6 +6,7 @@ stages:
 
 before_script:
   stage: build
+  script:
     - docker login -u $DockerHubLogin -p $DockerhubToken
   
 build_job:
