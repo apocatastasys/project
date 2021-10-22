@@ -5,7 +5,8 @@ stages:
   - deploy
 
 deploy_job:
-  stage: deploy 
+  stage: deploy
+  script: 
     - eval $(ssh-agent -s)
     - mkdir -p ~/.ssh
     - echo "$ssh_private_key" > ~/.ssh/id_rsa
