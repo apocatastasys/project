@@ -7,7 +7,7 @@ stages:
 before_script:
   - eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
-  - touch ~/.ssh/id_rsa #/home/appuser/.ssh/id_rsa.pub
+  - touch ~/.ssh/id_rsa /home/deployer/.ssh/id_rsa
   - chmod -R 700 ~/.ssh
   #- ssh-add <(echo "$ssh_private_key")
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
