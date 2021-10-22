@@ -6,6 +6,8 @@ services:
       - 27017:27017
   myrabbitmq:
     image: apocatastasys/rabbitmq:latest
+    ports:
+      - 15672:15672
   mycrawler:
     image: apocatastasys/crawler:1.0
   myapp:
