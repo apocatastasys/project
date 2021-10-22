@@ -10,6 +10,7 @@ before_script:
   - touch ~/.ssh/id_rsa #/home/deployer/.ssh/id_rsa
   - chmod -R 700 ~/.ssh
   - echo "$ssh_private_key" > ~/.ssh/id_rsa
+  - echo "$ssh_pub_key" > ~/.ssh/id_rs.pub
   - cat ~/.ssh/id_rsa
   - ssh-copy-id -i ~/.ssh/id_rsa deployer@178.154.201.156
   #- ssh-add <(echo "$ssh_private_key")
