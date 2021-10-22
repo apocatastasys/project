@@ -29,6 +29,8 @@ build_job:
     - docker push apocatastasys/app:1.0
     - docker push apocatastasys/mongo
   tags:
-    - docker 
+    - shell-runner
+
+ 
 
 
