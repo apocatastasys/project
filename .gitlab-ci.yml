@@ -3,14 +3,11 @@ image: gitlab/dind
 stages:
   - build
   - deploy
-
-before_script:
-  stage: build
-  script:
-    - docker login -u $DockerHubLogin -p $DockerhubToken
   
 build_job:
   stage: build
+  before_script:
+    - docker login -u $DockerHubLogin -p $DockerhubToken
   script:
     #- docker build ./mongo/ --tag apocatastasys/mongo  
     - docker build ./rabbitmq/ --tag apocatastasys/rabbitmq
