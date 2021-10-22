@@ -32,7 +32,7 @@
  - docker версии не ниже 20.10.7 и docker-compose версии не ниже 1.25.0. Установка производится согласно следующей инструкции: https://docs.docker.com/engine/install/ .
  - docker-machine версии не ниже  0.16.0. Установка производится по инструкции: https://linux-notes.org/ustanovka-docker-machine-v-unix-linux/ 
  - CI/CD осуществляется посредством Gitlab, развернутом на вм YandexCloud (необходимо выполнить docker-compose up -d из папки omnibus? предварительно заменив в файле docker-compose.yml адрес внешнего IP на свой адрес  вм YandexCloud) дополнительно на данном сервере установливается gitlab-runner по инструкции https://docs.gitlab.com/runner/install/ и регестрируются runner-ы docker и shell согласно инструкции - https://docs.gitlab.com/runner/commands/#gitlab-runner-register .
-   - Для хранения созданных образов используется публичный репозиторий hub.docker.com, на котором требуется зарегистрироваться. После чего в настройках Gitlab (settings-CI/CD) необходимо создать переменные: "DockerHubLogin" и "DockerhubToken" для хранения логина и пароля от репозитория.
+ - Для хранения созданных образов используется публичный репозиторий hub.docker.com, на котором требуется зарегистрироваться. После чего в настройках Gitlab (settings-CI/CD) необходимо создать переменные: "DockerHubLogin" и "DockerhubToken" для хранения логина и пароля от репозитория.
  - Для управления докер контейнерами используется ранеесозданный инстанс docker-machine с именем project-host, для чего необходимо выполнить команду  eval $(docker-machine env project-host).
 
 Для развертывания проекта необходимо, на развернутом Gitlab (находится на внешнем IP вм YandexCloud) клонировать проект https://github.com/apocatastasys/project.git , после чего запустить pipline.
