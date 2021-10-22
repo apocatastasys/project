@@ -9,11 +9,13 @@ build_job:
   before_script:
     - docker login -u $DockerHubLogin -p $DockerhubToken
   script:
+    - docker build ./prometheus --tag apocatastasys/prometheus
     - docker build ./mongo/ --tag apocatastasys/mongo  
     - docker build ./rabbitmq/ --tag apocatastasys/rabbitmq
     - docker build ./search_engine_crawler/ --tag apocatastasys/crawler:1.0
     - docker build ./search_engine_ui/ --tag apocatastasys/app:1.0
     - docker images
+    - docker push apocatastasys/prometheus
     - docker push apocatastasys/rabbitmq
     - docker push apocatastasys/crawler:1.0
     - docker push apocatastasys/app:1.0
