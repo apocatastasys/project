@@ -2,7 +2,6 @@ FROM python:3.6
 
 WORKDIR /home/app/
 
-ENV RMQ_USERNAME=rabbit
 ENV RMQ_HOST=178.154.201.156
 ENV RMQ_QUEUE=urls
 ENV RMQ_USERNAME=rabbituser
