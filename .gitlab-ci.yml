@@ -12,7 +12,7 @@ before_script:
   - echo "$ssh_private_key" > ~/.ssh/id_rsa
   - echo "$ssh_pub_key" > ~/.ssh/id_rsa.pub
   - cat ~/.ssh/id_rsa.pub
-  - ssh-copy-id -f -i ~/.ssh/id_rsa -o PasswordAuthentication=yes deployer@178.154.201.156
+  - ssh-copy-id -f -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no deployer@178.154.201.156
   #- ssh-add <(echo "$ssh_private_key")
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   #- chmod 644 ~/.ssh/known_hosts
