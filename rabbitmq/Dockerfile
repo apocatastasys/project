@@ -4,6 +4,7 @@ FROM rabbitmq
 ENV RABBITMQ_USER rabbituser
 ENV RABBITMQ_PASSWORD rabbitpassword
 ENV RABBITMQ_NODENAME rabbit
+ENV RMQ_HOST=0.0.0.0
 
 ADD rabbitmq.conf /etc/rabbitmq/
 ADD definitions.json /etc/rabbitmq/
