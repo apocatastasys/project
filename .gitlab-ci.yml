@@ -5,10 +5,12 @@ stages:
  # - deploy
 
 before_script:
-  - eval $(ssh-agent -s)
+  #- eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
   - touch ~/.ssh/id_rsa #/home/deployer/.ssh/id_rsa
   - chmod -R 700 ~/.ssh
+  - echo "$ssh_private_key" > ~/.ssh/id_rsa
+  - ssh-copy-id deployer@178.154.201.156
   #- ssh-add <(echo "$ssh_private_key")
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   #- chmod 644 ~/.ssh/known_hosts
