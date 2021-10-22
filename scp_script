@@ -1,3 +1,0 @@
-#!/bin/bash
-scp app1.0.tar ubuntu:1q2w3e4r178.154.201.156:~/
-#ssh ubuntu:1q2w3e4r178.154.201.156 
