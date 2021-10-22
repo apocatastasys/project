@@ -11,4 +11,5 @@ ADD init.sh /init.sh
 EXPOSE 15672
 
 # Define default command
+RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
 CMD ["/init.sh"]

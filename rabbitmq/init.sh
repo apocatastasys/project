@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Create Rabbitmq user
 ( sleep 5 ; \
