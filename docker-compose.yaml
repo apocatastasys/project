@@ -7,7 +7,7 @@ services:
   myrabbitmq:
     image: apocatastasys/rabbitmq:latest
     ports:
-      - 15672:15672
+      - 5672:5672
   mycrawler:
     image: apocatastasys/crawler:1.0
   myapp:
