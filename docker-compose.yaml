@@ -24,5 +24,9 @@ services:
     image: apocatastasys/app:1.0
     ports:
       - 8000:8000
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
 volumes:
   prometheus_data:
