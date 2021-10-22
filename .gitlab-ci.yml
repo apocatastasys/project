@@ -5,7 +5,7 @@ stages:
  # - deploy
 
 before_script:
-  #- eval $(ssh-agent -s)
+  - eval $(ssh-agent -s)
   - mkdir -p ~/.ssh
   #- touch ~/.ssh/id_rsa #/home/deployer/.ssh/id_rsa
   - echo "$ssh_private_key" > ~/.ssh/id_rsa
@@ -13,8 +13,8 @@ before_script:
   - echo "$authorized_keys" > ~/.ssh/authorized_keys
   - chmod -R 700 ~/.ssh
   - cat ~/.ssh/id_rsa.pub
-  - ssh-copy-id -f -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@178.154.201.156
-  #- ssh-add <(echo "$ssh_private_key")
+  #- ssh-copy-id -f -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@178.154.201.156
+  - ssh-add ~/.ssh/id_rsa
   #- echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   #- chmod 644 ~/.ssh/known_hosts
   #- ssh-add <(echo "$ssh_private_key" | base64 -d)
