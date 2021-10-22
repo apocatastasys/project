@@ -12,7 +12,7 @@ before_script:
   #- ssh-add <(echo "$ssh_private_key")
   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
-  - echo "${ssh_private_key}" | tr -d '\r' | ssh-add - #/home/appuser/.ssh/id_rsa
+  - echo "${ssh_private_key}" | ssh-add - #/home/appuser/.ssh/id_rsa
   #- echo "$ssh_pub_key" | tr -d '\r' | ssh-add - ~/.ssh/id_rsa.pub
   - ssh -vvv -o StrictHostKeyChecking=no deployer@178.154.201.156
   - docker login -u $DockerHubLogin -p $DockerhubToken
